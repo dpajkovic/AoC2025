@@ -11,23 +11,7 @@ Advent of Code is an annual event featuring a series of coding challenges releas
 
 ## Project Structure
 
-```bash
-AoC2025/
-├── dXX/
-│   ├── go.mod
-│   ├── main.go
-│   ├── input.txt
-│   ├── testinput.txt
-│   ├── p1/
-│   │   ├── p1.go
-│   │   └── p1_test.go
-│   └── p2/
-│       ├── p2.go
-│       └── p2_test.go
-├── README.md
-├── LICENSE
-└── .gitignore
-```
+![Project structure](./AoC2025.svg)
 
 Each day (`dXX`) is organized as a separate module containing:
 
