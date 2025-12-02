@@ -36,6 +36,14 @@ Each day (`dXX`) is organized as a separate module containing:
 - [ ] Day 11 - ???
 - [ ] Day 12 - ???
 
+## Scaffolding new day
+
+Use provided cookiecutter template:
+
+```bash
+cookiecutter --no-input cookiecutter-AoC2025.zip day_number=XX
+```
+
 ## Building & Running
 
 ### Run a specific day's solution
