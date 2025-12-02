@@ -13,7 +13,7 @@ Advent of Code is an annual event featuring a series of coding challenges releas
 
 ```bash
 AoC2025/
-├── d##/
+├── dXX/
 │   ├── go.mod
 │   ├── main.go
 │   ├── input.txt
@@ -29,7 +29,7 @@ AoC2025/
 └── .gitignore
 ```
 
-Each day (`d##`) is organized as a separate module containing:
+Each day (`dXX`) is organized as a separate module containing:
 
 - **main.go**: Entry point that reads input and calls both part solvers
 - **input.txt**: The actual puzzle input
@@ -57,21 +57,21 @@ Each day (`d##`) is organized as a separate module containing:
 ### Run a specific day's solution
 
 ```bash
-cd d02
+cd dXX
 go run main.go
 ```
 
 ### Run tests for a specific part
 
 ```bash
-cd d02/p1
+cd dXX/p1
 go test -v
 ```
 
 Or for part 2:
 
 ```bash
-cd d02/p2
+cd dXX/p2
 go test -v
 ```
 
