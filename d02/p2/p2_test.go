@@ -11,6 +11,8 @@ import (
 	"testing"
 )
 
+const testResult = 4174379265
+
 func TestP2(t *testing.T) {
 	file, err := os.Open("../testinput.txt")
 	if err != nil {
@@ -38,7 +40,7 @@ func TestP2(t *testing.T) {
 		{
 			name: "Test input",
 			args: args{input: testInput},
-			want: 4174379265,
+			want: testResult,
 		},
 	}
 	for _, tt := range tests {
