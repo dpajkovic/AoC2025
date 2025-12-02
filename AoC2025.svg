@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="865" height="670" viewBox="0 0 865 670">
+<svg xmlns="http://www.w3.org/2000/svg" width="865" height="710" viewBox="0 0 865 710">
   <defs>
     <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
       <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.3"/>
@@ -60,6 +60,7 @@
   <path class="connector-line" d="M 30 50 L 30 515 L 70 515"/>
   <path class="connector-line" d="M 30 50 L 30 555 L 70 555"/>
   <path class="connector-line" d="M 30 50 L 30 595 L 70 595"/>
+  <path class="connector-line" d="M 30 50 L 30 635 L 70 635"/>
   <rect class="tree-box-dir" x="20" y="20" width="74" height="30"/>
   <text class="tree-text" x="28" y="39">AoC2025</text>
   <rect class="tree-box-dir" x="70" y="60" width="41" height="30"/>
@@ -100,16 +101,20 @@
   <text class="tree-text" x="128" y="439">p2.go</text>
   <rect class="tree-box-file" x="120" y="460" width="100" height="30"/>
   <text class="tree-text" x="128" y="479">p2_test.go</text>
-  <rect class="tree-box-file" x="70" y="500" width="91" height="30"/>
-  <text class="tree-text" x="78" y="519">README.md</text>
-  <line class="comment-line" x1="161" y1="515" x2="186" y2="515"/>
-  <text class="comment-text" x="191" y="519">This file</text>
-  <rect class="tree-box-file" x="70" y="540" width="74" height="30"/>
-  <text class="tree-text" x="78" y="559">LICENSE</text>
-  <line class="comment-line" x1="144" y1="555" x2="169" y2="555"/>
-  <text class="comment-text" x="174" y="559">BSL license</text>
-  <rect class="tree-box-file" x="70" y="580" width="100" height="30"/>
-  <text class="tree-text" x="78" y="599">.gitignore</text>
-  <line class="comment-line" x1="170" y1="595" x2="195" y2="595"/>
-  <text class="comment-text" x="200" y="599">Ignore VScode and Go artifacts</text>
+  <rect class="tree-box-file" x="70" y="500" width="217" height="30"/>
+  <text class="tree-text" x="78" y="519">cookiecutter-AoC2025.zip</text>
+  <line class="comment-line" x1="287" y1="515" x2="312" y2="515"/>
+  <text class="comment-text" x="317" y="519">cookiecutter template</text>
+  <rect class="tree-box-file" x="70" y="540" width="91" height="30"/>
+  <text class="tree-text" x="78" y="559">README.md</text>
+  <line class="comment-line" x1="161" y1="555" x2="186" y2="555"/>
+  <text class="comment-text" x="191" y="559">This file</text>
+  <rect class="tree-box-file" x="70" y="580" width="74" height="30"/>
+  <text class="tree-text" x="78" y="599">LICENSE</text>
+  <line class="comment-line" x1="144" y1="595" x2="169" y2="595"/>
+  <text class="comment-text" x="174" y="599">BSL license</text>
+  <rect class="tree-box-file" x="70" y="620" width="100" height="30"/>
+  <text class="tree-text" x="78" y="639">.gitignore</text>
+  <line class="comment-line" x1="170" y1="635" x2="195" y2="635"/>
+  <text class="comment-text" x="200" y="639">Ignore VScode and Go artifacts</text>
 </svg>
