@@ -1,6 +1,6 @@
 # Advent of Code 2025 - Go Solutions
 
-![day](https://img.shields.io/badge/day%20📅-02-blue) ![stars](https://img.shields.io/badge/stars%20⭐-4x-yellow) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/dpajkovic/AoC2025?filename=%2Fd01%2Fgo.mod&logo=go) ![GitHub License](https://img.shields.io/github/license/dpajkovic/AoC2025)
+![day](https://img.shields.io/badge/day%20📅-03-blue) ![stars](https://img.shields.io/badge/stars%20⭐-3x-yellow) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/dpajkovic/AoC2025?filename=%2Fd01%2Fgo.mod&logo=go) ![GitHub License](https://img.shields.io/github/license/dpajkovic/AoC2025)
 
 This repository contains my solutions for [Advent of Code 2025](https://adventofcode.com/2025) implemented in Go.
 
@@ -24,7 +24,7 @@ Each day (`dXX`) is organized as a separate module containing:
 
 - [x] Day 01 - Secret Entrance
 - [x] Day 02 - Gift Shop
-- [ ] Day 03 - ???
+- [x] Day 03 - Lobby
 - [ ] Day 04 - ???
 - [ ] Day 05 - ???
 - [ ] Day 06 - ???
