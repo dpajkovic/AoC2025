@@ -26,6 +26,7 @@ func P2(input []string) string {
 
 	roll := color.Gray{Y: uint8('@')}
 	empty := color.Gray{Y: uint8('.')}
+	changed := color.Gray{Y: uint8('X')}
 
 	surroundingDeltas := []image.Point{
 		{X: -1, Y: 0},
@@ -38,18 +39,21 @@ func P2(input []string) string {
 		{X: 1, Y: 1},
 	}
 	count := 0
-	imageNr := 0
 	removed := true
 	for removed {
 		removed = false
-		saveImage(floorMap, imageNr)
-		imageNr++
+		saveImage(floorMap)
 		for y := 0; y < maxY; y++ {
 			for x := 0; x < maxX; x++ {
+				coord := image.Point{X: x, Y: y}
+				if floorMap.GrayAt(x, y) == changed {
+					floorMap.SetGray(x, y, empty)
+					continue
+				}
 				if floorMap.GrayAt(x, y) == roll {
 					countPoint := 0
 					for _, delta := range surroundingDeltas {
-						surroundingPoint := image.Point{X: x + delta.X, Y: y + delta.Y}
+						surroundingPoint := delta.Add(coord)
 						if surroundingPoint.In(rect) {
 							if floorMap.GrayAt(surroundingPoint.X, surroundingPoint.Y) == roll {
 								countPoint++
@@ -58,7 +62,7 @@ func P2(input []string) string {
 					}
 					if countPoint < 4 {
 						count++
-						floorMap.SetGray(x, y, empty)
+						floorMap.SetGray(coord.X, coord.Y, changed)
 						removed = true
 					}
 				}
@@ -71,9 +75,9 @@ func P2(input []string) string {
 
 var gifImages []*image.Paletted
 var gifDelays []int
-var gifPalette color.Palette = color.Palette{color.Gray{Y: 0}, color.Gray{Y: 255}}
+var gifPalette color.Palette = color.Palette{color.Gray{Y: 0}, color.Gray{Y: 255}, color.RGBA{R: 255, G: 0, B: 0, A: 255}, color.RGBA{R: 255, G: 165, B: 0, A: 255}, color.RGBA{R: 255, G: 255, B: 0, A: 255}, color.RGBA{R: 0, G: 255, B: 0, A: 255}}
 
-func saveImage(img *image.Gray, order int) error {
+func saveImage(img *image.Gray) error {
 	// Convert Gray image to Paletted for GIF
 	bounds := img.Bounds()
 	palettedImg := image.NewPaletted(bounds, gifPalette)
@@ -83,7 +87,34 @@ func saveImage(img *image.Gray, order int) error {
 			if gray.Y == uint8('@') {
 				palettedImg.SetColorIndex(x, y, 1)
 			} else {
-				palettedImg.SetColorIndex(x, y, 0)
+				if gray.Y == uint8('X') {
+					palettedImg.SetColorIndex(x, y, 2)
+					img.SetGray(x, y, color.Gray{Y: uint8('R')})
+				} else {
+					if gray.Y == uint8('R') {
+						palettedImg.SetColorIndex(x, y, 3)
+						img.SetGray(x, y, color.Gray{Y: uint8('O')})
+					} else {
+						if gray.Y == uint8('O') {
+							palettedImg.SetColorIndex(x, y, 4)
+							img.SetGray(x, y, color.Gray{Y: uint8('Y')})
+
+						} else {
+							if gray.Y == uint8('Y') {
+								palettedImg.SetColorIndex(x, y, 5)
+								img.SetGray(x, y, color.Gray{Y: uint8('G')})
+
+							} else {
+								if gray.Y == uint8('G') {
+									palettedImg.SetColorIndex(x, y, 0)
+									img.SetGray(x, y, color.Gray{Y: uint8('.')})
+								} else {
+									palettedImg.SetColorIndex(x, y, 0)
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
