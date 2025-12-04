@@ -8,6 +8,8 @@ package p2
 import (
 	"image"
 	"image/color"
+	"image/gif"
+	"os"
 	"strconv"
 )
 
@@ -36,9 +38,12 @@ func P2(input []string) string {
 		{X: 1, Y: 1},
 	}
 	count := 0
+	imageNr := 0
 	removed := true
 	for removed {
 		removed = false
+		saveImage(floorMap, imageNr)
+		imageNr++
 		for y := 0; y < maxY; y++ {
 			for x := 0; x < maxX; x++ {
 				if floorMap.GrayAt(x, y) == roll {
@@ -60,5 +65,48 @@ func P2(input []string) string {
 			}
 		}
 	}
+	saveGifToFile("output.gif")
 	return strconv.Itoa(count)
+}
+
+var gifImages []*image.Paletted
+var gifDelays []int
+var gifPalette color.Palette = color.Palette{color.Gray{Y: 0}, color.Gray{Y: 255}}
+
+func saveImage(img *image.Gray, order int) error {
+	// Convert Gray image to Paletted for GIF
+	bounds := img.Bounds()
+	palettedImg := image.NewPaletted(bounds, gifPalette)
+	for y := bounds.Min.Y; y < bounds.Max.Y; y++ {
+		for x := bounds.Min.X; x < bounds.Max.X; x++ {
+			gray := img.GrayAt(x, y)
+			if gray.Y == uint8('@') {
+				palettedImg.SetColorIndex(x, y, 1)
+			} else {
+				palettedImg.SetColorIndex(x, y, 0)
+			}
+		}
+	}
+	gifImages = append(gifImages, palettedImg)
+	gifDelays = append(gifDelays, 10) // 10 = 100ms per frame
+
+	return nil
+}
+
+// Save the accumulated GIF frames to a file.
+
+func saveGifToFile(filename string) error {
+	if len(gifImages) == 0 {
+		return nil
+	}
+	f, err := os.Create(filename)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	anim := gif.GIF{
+		Image: gifImages,
+		Delay: gifDelays,
+	}
+	return gif.EncodeAll(f, &anim)
 }
