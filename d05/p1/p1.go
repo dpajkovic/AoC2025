@@ -41,10 +41,8 @@ func P1(input []string) string {
 	}
 	count := 0
 	for _, n := range nums {
-		// inRange := false
 		for _, r := range ranges {
-			if n >= r.min && n <= r.max {
-				// inRange = true
+			if isInRange(n, r) {
 				count++
 				break
 			}
@@ -52,4 +50,8 @@ func P1(input []string) string {
 	}
 
 	return strconv.Itoa(count)
+}
+
+func isInRange(n int64, r numRange) bool {
+	return n >= r.min && n <= r.max
 }
