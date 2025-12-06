@@ -9,6 +9,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"time"
 
 	"d06/p1"
 	"d06/p2"
@@ -30,8 +31,10 @@ func main() {
 		input = append(input, l)
 	}
 
+	t := time.Now()
 	p1 := p1.P1(input)
-	fmt.Printf("Result for part 1: %s\n", p1)
+	fmt.Printf("Result for part 1: %s\nExecution time: %s\n", p1, time.Since(t))
+	t = time.Now()
 	p2 := p2.P2(input)
-	fmt.Printf("Result for part 2: %s\n", p2)
+	fmt.Printf("Result for part 1: %s\nExecution time: %s\n", p2, time.Since(t))
 }

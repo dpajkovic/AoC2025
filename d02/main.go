@@ -7,9 +7,12 @@ package main
 
 import (
 	"bufio"
+	"fmt"
+	"os"
+	"time"
+
 	"d02/p1"
 	"d02/p2"
-	"os"
 )
 
 func main() {
@@ -27,9 +30,11 @@ func main() {
 		l := scanner.Text()
 		input = append(input, l)
 	}
-	p1 := p1.P1(input)
-	println("Result for part 1:", p1)
-	p2 := p2.P2(input)
-	println("Result for part 2:", p2)
 
+	t := time.Now()
+	p1 := p1.P1(input)
+	fmt.Printf("Result for part 1: %d\nExecution time: %s\n", p1, time.Since(t))
+	t = time.Now()
+	p2 := p2.P2(input)
+	fmt.Printf("Result for part 1: %d\nExecution time: %s\n", p2, time.Since(t))
 }
