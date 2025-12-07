@@ -36,5 +36,5 @@ func main() {
 	fmt.Printf("Result for part 1: %s\nExecution time: %s\n", p1, time.Since(t))
 	t = time.Now()
 	p2 := p2.P2(input)
-	fmt.Printf("Result for part 1: %s\nExecution time: %s\n", p2, time.Since(t))
+	fmt.Printf("Result for part 2: %s\nExecution time: %s\n", p2, time.Since(t))
 }
