@@ -1,6 +1,6 @@
 # Advent of Code 2025 - Go Solutions
 
-![day](https://img.shields.io/badge/day%20📅-10-blue) ![stars](https://img.shields.io/badge/stars%20⭐-20-yellow) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/dpajkovic/AoC2025?filename=%2Fd01%2Fgo.mod&logo=go) ![GitHub License](https://img.shields.io/github/license/dpajkovic/AoC2025)
+![day](https://img.shields.io/badge/day%20📅-11-blue) ![stars](https://img.shields.io/badge/stars%20⭐-22-yellow) ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/dpajkovic/AoC2025?filename=%2Fd01%2Fgo.mod&logo=go) ![GitHub License](https://img.shields.io/github/license/dpajkovic/AoC2025)
 
 This repository contains my solutions for [Advent of Code 2025](https://adventofcode.com/2025) implemented in Go.
 
@@ -32,7 +32,7 @@ Each day (`dXX`) is organized as a separate module containing:
 - [x] Day 08 - Playground
 - [x] Day 09 - Movie Theater
 - [x] Day 10 - Factory
-- [ ] Day 11 - ???
+- [x] Day 11 - Reactor
 - [ ] Day 12 - ???
 
 ## Scaffolding new day
